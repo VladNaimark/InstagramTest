@@ -39,14 +39,10 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    int i = 0;
-    ++i;
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-    int i = 0;
-    ++i;
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
