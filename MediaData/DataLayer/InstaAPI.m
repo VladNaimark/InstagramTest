@@ -117,7 +117,7 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:parameters];
     params[@"access_token"] = self.accessToken;
     NSString *url;
-    if ([endPoint rangeOfString:@"http"].location != NSNotFound)
+    if ([endPoint rangeOfString:@"http"].location == 0)
     {
         url = endPoint;
     }
