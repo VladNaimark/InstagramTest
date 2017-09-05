@@ -19,8 +19,11 @@
 		4D4260641F59B50F00E99946 /* MediaListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D42605F1F59B50F00E99946 /* MediaListCell.m */; };
 		4D4260651F59B50F00E99946 /* MediaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4260611F59B50F00E99946 /* MediaVC.m */; };
 		4D4260681F59B54400E99946 /* InstaAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4260671F59B54400E99946 /* InstaAPI.m */; };
-		4D42606A1F59B56D00E99946 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D4260691F59B56D00E99946 /* Main.storyboard */; };
 		4D42606E1F59B5A700E99946 /* UIImageView+MediaData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D42606D1F59B5A700E99946 /* UIImageView+MediaData.m */; };
+		4D79A6BF1F5E9C2200C268B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D79A6C11F5E9C2200C268B9 /* Main.storyboard */; };
+		4D79A6C81F5E9D7900C268B9 /* Login.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4D79A6CA1F5E9D7900C268B9 /* Login.strings */; };
+		4D79A6D11F5E9F6800C268B9 /* General.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4D79A6D31F5E9F6800C268B9 /* General.strings */; };
+		4D79A6D81F5EAEC400C268B9 /* MediaVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D79A6D71F5EAEC400C268B9 /* MediaVM.m */; };
 		CD5316480F01A933578E2D94 /* libPods-MediaData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D973EDFDA91E4DBF53A84B70 /* libPods-MediaData.a */; };
 /* End PBXBuildFile section */
 
@@ -48,9 +51,18 @@
 		4D4260611F59B50F00E99946 /* MediaVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaVC.m; sourceTree = "<group>"; };
 		4D4260661F59B54400E99946 /* InstaAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstaAPI.h; sourceTree = "<group>"; };
 		4D4260671F59B54400E99946 /* InstaAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstaAPI.m; sourceTree = "<group>"; };
-		4D4260691F59B56D00E99946 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4D42606C1F59B5A700E99946 /* UIImageView+MediaData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+MediaData.h"; sourceTree = "<group>"; };
 		4D42606D1F59B5A700E99946 /* UIImageView+MediaData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MediaData.m"; sourceTree = "<group>"; };
+		4D79A6C01F5E9C2200C268B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4D79A6C21F5E9C7300C268B9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4D79A6C91F5E9D7900C268B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Login.strings; sourceTree = "<group>"; };
+		4D79A6CB1F5E9D7B00C268B9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Login.strings; sourceTree = "<group>"; };
+		4D79A6CC1F5E9DDD00C268B9 /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		4D79A6CE1F5E9E8800C268B9 /* MediaData.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaData.pch; sourceTree = "<group>"; };
+		4D79A6D21F5E9F6800C268B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/General.strings; sourceTree = "<group>"; };
+		4D79A6D51F5E9F9E00C268B9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/General.strings; sourceTree = "<group>"; };
+		4D79A6D61F5EAEC400C268B9 /* MediaVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaVM.h; sourceTree = "<group>"; };
+		4D79A6D71F5EAEC400C268B9 /* MediaVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaVM.m; sourceTree = "<group>"; };
 		7386BB6A90F478AFA083B29A /* Pods-MediaData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaData.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MediaData/Pods-MediaData.debug.xcconfig"; sourceTree = "<group>"; };
 		D973EDFDA91E4DBF53A84B70 /* libPods-MediaData.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MediaData.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8E6FDCF3BF573B78A180F4 /* Pods-MediaData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaData.release.xcconfig"; path = "Pods/Target Support Files/Pods-MediaData/Pods-MediaData.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +115,7 @@
 				4D42606B1F59B5A700E99946 /* Categories */,
 				4D4260221F593CE500E99946 /* AppDelegate.h */,
 				4D4260231F593CE500E99946 /* AppDelegate.m */,
+				4D79A6C51F5E9D2D00C268B9 /* Localization */,
 				4D42601F1F593CE500E99946 /* Supporting Files */,
 			);
 			path = MediaData;
@@ -112,11 +125,13 @@
 			isa = PBXGroup;
 			children = (
 				4D4260301F593CE500E99946 /* LaunchScreen.storyboard */,
+				4D79A6CC1F5E9DDD00C268B9 /* Macro.h */,
 				4D4260421F5950B600E99946 /* Constants.h */,
 				4D4260401F5950A700E99946 /* Constants.m */,
 				4D4260331F593CE500E99946 /* Info.plist */,
 				4D42602E1F593CE500E99946 /* Assets.xcassets */,
 				4D4260201F593CE500E99946 /* main.m */,
+				4D79A6CE1F5E9E8800C268B9 /* MediaData.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -130,6 +145,8 @@
 				4D4260481F598CF800E99946 /* MediaList.m */,
 				4D42604A1F598D3900E99946 /* Media.h */,
 				4D42604B1F598D3900E99946 /* Media.m */,
+				4D79A6D61F5EAEC400C268B9 /* MediaVM.h */,
+				4D79A6D71F5EAEC400C268B9 /* MediaVM.m */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
@@ -137,7 +154,7 @@
 		4D4260591F59B50F00E99946 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				4D4260691F59B56D00E99946 /* Main.storyboard */,
+				4D79A6C11F5E9C2200C268B9 /* Main.storyboard */,
 				4D42605A1F59B50F00E99946 /* LoginVC.h */,
 				4D42605B1F59B50F00E99946 /* LoginVC.m */,
 				4D42605C1F59B50F00E99946 /* MediaGridVC.h */,
@@ -157,6 +174,15 @@
 				4D42606D1F59B5A700E99946 /* UIImageView+MediaData.m */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		4D79A6C51F5E9D2D00C268B9 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				4D79A6CA1F5E9D7900C268B9 /* Login.strings */,
+				4D79A6D31F5E9F6800C268B9 /* General.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		8776138826E3E24E0A60033D /* Frameworks */ = {
@@ -213,6 +239,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 4D4260131F593CE500E99946;
 			productRefGroup = 4D42601D1F593CE500E99946 /* Products */;
@@ -229,9 +256,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D42606A1F59B56D00E99946 /* Main.storyboard in Resources */,
+				4D79A6BF1F5E9C2200C268B9 /* Main.storyboard in Resources */,
 				4D4260321F593CE500E99946 /* LaunchScreen.storyboard in Resources */,
+				4D79A6C81F5E9D7900C268B9 /* Login.strings in Resources */,
 				4D42602F1F593CE500E99946 /* Assets.xcassets in Resources */,
+				4D79A6D11F5E9F6800C268B9 /* General.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +326,7 @@
 				4D4260211F593CE500E99946 /* main.m in Sources */,
 				4D42604C1F598D3900E99946 /* Media.m in Sources */,
 				4D4260641F59B50F00E99946 /* MediaListCell.m in Sources */,
+				4D79A6D81F5EAEC400C268B9 /* MediaVM.m in Sources */,
 				4D4260681F59B54400E99946 /* InstaAPI.m in Sources */,
 				4D4260411F5950A700E99946 /* Constants.m in Sources */,
 				4D4260631F59B50F00E99946 /* MediaGridVC.m in Sources */,
@@ -315,6 +345,33 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		4D79A6C11F5E9C2200C268B9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D79A6C01F5E9C2200C268B9 /* en */,
+				4D79A6C21F5E9C7300C268B9 /* ru */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4D79A6CA1F5E9D7900C268B9 /* Login.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D79A6C91F5E9D7900C268B9 /* en */,
+				4D79A6CB1F5E9D7B00C268B9 /* ru */,
+			);
+			name = Login.strings;
+			sourceTree = "<group>";
+		};
+		4D79A6D31F5E9F6800C268B9 /* General.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D79A6D21F5E9F6800C268B9 /* en */,
+				4D79A6D51F5E9F9E00C268B9 /* ru */,
+			);
+			name = General.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -322,6 +379,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -349,6 +407,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = MediaData/MediaData.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -371,6 +430,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -396,6 +456,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = MediaData/MediaData.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

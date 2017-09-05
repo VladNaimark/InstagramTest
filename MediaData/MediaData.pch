@@ -1,0 +1,17 @@
+//
+//  MediaData.pch
+//  MediaData
+//
+//  Created by Vlad Naimark on 9/5/17.
+//  Copyright © 2017 Vlad Naimark. All rights reserved.
+//
+
+#ifndef MediaData_pch
+#define MediaData_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "Macro.h"
+
+#endif /* MediaData_pch */

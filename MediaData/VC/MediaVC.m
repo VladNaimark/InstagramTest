@@ -9,6 +9,7 @@
 #import "MediaVC.h"
 #import "UIImageView+MediaData.h"
 #import "Media.h"
+#import "MediaVM.h"
 
 @interface MediaVC ()
 
@@ -16,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *commentCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *likesCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tagsLabel;
+
+@property (nonatomic, strong) MediaVM *mediaVM;
 
 @end
 
@@ -31,6 +34,7 @@
 - (void)setMedia:(Media *)media
 {
     _media = media;
+    self.mediaVM = [MediaVM createWithMedia:media];
     if (!self.viewLoaded)
     {
         return;
@@ -42,19 +46,9 @@
 - (void)configure
 {
     [self.imageView setImageFromURLString:self.media.standartImage];
-    self.commentCountLabel.text = [NSString stringWithFormat:@"%d", self.media.commentsCount];
-    self.likesCountLabel.text = [NSString stringWithFormat:@"%d", self.media.likesCount];
-    NSMutableString *tags = [NSMutableString new];
-    for (NSString *tag in self.media.tags)
-    {
-        if (tags.length)
-        {
-            [tags appendString:@"\n"];
-        }
-        [tags appendString:@"#"];
-        [tags appendString:tag];
-    }
-    self.tagsLabel.text = tags;
+    self.commentCountLabel.text = self.mediaVM.commentCountText;
+    self.likesCountLabel.text = self.mediaVM.likeCountText;
+    self.tagsLabel.text = self.mediaVM.tagsText;
 }
 
 @end
