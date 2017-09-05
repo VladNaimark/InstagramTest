@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MediaList.h"
+
+@class MediaList;
 
 @interface InstaAPI : NSObject
 

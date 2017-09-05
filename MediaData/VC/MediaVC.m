@@ -8,6 +8,7 @@
 
 #import "MediaVC.h"
 #import "UIImageView+MediaData.h"
+#import "Media.h"
 
 @interface MediaVC ()
 

@@ -7,6 +7,7 @@
 //
 
 #import "MediaList.h"
+#import "Media.h"
 
 @interface MediaList ()
 

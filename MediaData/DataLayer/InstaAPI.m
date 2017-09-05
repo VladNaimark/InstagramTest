@@ -8,6 +8,7 @@
 
 #import <AFNetworking.h>
 #import "InstaAPI.h"
+#import "MediaList.h"
 #import "Constants.h"
 
 

@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Media.h"
+
+@class Media;
 
 @interface MediaList : NSObject
 

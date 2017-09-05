@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Media.h"
+
+@class Media;
 
 @interface MediaVC : UIViewController
 

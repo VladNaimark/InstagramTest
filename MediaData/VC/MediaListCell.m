@@ -8,6 +8,7 @@
 
 #import "MediaListCell.h"
 #import "UIImageView+MediaData.h"
+#import "Media.h"
 
 @interface MediaListCell()
 

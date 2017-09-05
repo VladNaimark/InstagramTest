@@ -10,8 +10,12 @@
 #import "InstaAPI.h"
 #import "MediaListCell.h"
 #import "MediaVC.h"
+#import "MediaList.h"
+#import "Media.h"
 
 static const int MEDIA_PER_REQUEST = 7;
+static const int DEFAULT_CELL_SIZE = 150;
+static const int MIN_CELLS_PER_ROW = 3;
 
 @interface MediaGridVC () <UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -20,6 +24,7 @@ static const int MEDIA_PER_REQUEST = 7;
 
 @property (nonatomic, strong) MediaList *mediaList;
 @property (nonatomic, assign) BOOL requestingData;
+@property (nonatomic, assign) BOOL hasSetInitialCellSize;
 
 @end
 
@@ -31,16 +36,27 @@ static const int MEDIA_PER_REQUEST = 7;
     // Do any additional setup after loading the view.
     [self requestData];
     
-    CGSize screenSize = [UIScreen mainScreen].bounds.size;
-    CGFloat minSize = MIN(screenSize.width, screenSize.height);
-    float itemsPerRow = ceil(minSize / 150.0);
-    UICollectionViewFlowLayout* layout = ((UICollectionViewFlowLayout*)self.collectionView.collectionViewLayout);
-    layout.itemSize = CGSizeMake(ceil(minSize / itemsPerRow), ceil(minSize / itemsPerRow));
-    layout.minimumLineSpacing = 0;
-    layout.minimumInteritemSpacing = 0;
-    
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"🚪 Logout" style:UIBarButtonItemStylePlain target:self action:@selector(logout:)];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:LOCALIZE(@"Logout button title", @"Login")
+                                                                      style:UIBarButtonItemStylePlain
+                                                                     target:self
+                                                                     action:@selector(logout:)];
     self.navigationItem.leftBarButtonItem=newBackButton;
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    if (!self.hasSetInitialCellSize)
+    {
+        [self updateCellSizeForWidth:self.collectionView.frame.size.width];
+        self.hasSetInitialCellSize = YES;
+    }
+}
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+    [self updateCellSizeForWidth:size.width];
 }
 
 - (void)logout:(id)sender
@@ -102,10 +118,11 @@ static const int MEDIA_PER_REQUEST = 7;
         self.requestingData = NO;
         if (error)
         {
-            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:LOCALIZE(@"Error", @"General")
                                                                            message:error.localizedDescription
                                                                     preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:LOCALIZE(@"OK", @"General")
+                                                                    style:UIAlertActionStyleDefault
                                                                   handler:^(UIAlertAction * action) {}];
             [alert addAction:defaultAction];
             [self presentViewController:alert animated:YES completion:nil];
@@ -118,6 +135,23 @@ static const int MEDIA_PER_REQUEST = 7;
             [self.collectionView reloadData];
         }
     }];
+}
+
+- (void)updateCellSizeForWidth:(CGFloat)width
+{
+    CGFloat cellWidth;
+    if (width / DEFAULT_CELL_SIZE > MIN_CELLS_PER_ROW)
+    {
+        cellWidth = DEFAULT_CELL_SIZE + ((int)width % DEFAULT_CELL_SIZE) / ceil(width / DEFAULT_CELL_SIZE);
+    }
+    else
+    {
+        cellWidth = floor(width / MIN_CELLS_PER_ROW);
+    }
+    UICollectionViewFlowLayout* layout = ((UICollectionViewFlowLayout*)self.collectionView.collectionViewLayout);
+    layout.itemSize = CGSizeMake(cellWidth, cellWidth);
+    layout.minimumLineSpacing = 0;
+    layout.minimumInteritemSpacing = 0;
 }
 
 @end
