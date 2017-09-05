@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NavigatableVC.h"
 
 @class Media;
 
-@interface MediaVC : UIViewController
+@interface MediaVC : NavigatableVC
 
 @property (nonatomic, strong) Media *media;
 

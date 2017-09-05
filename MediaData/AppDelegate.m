@@ -7,8 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "Navigator.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) Navigator *navigator;
 
 @end
 
@@ -17,6 +20,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.navigator = [Navigator new];
+    [self.navigator start];
+    
     return YES;
 }
 

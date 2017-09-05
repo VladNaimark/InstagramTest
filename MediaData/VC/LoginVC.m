@@ -24,14 +24,10 @@
     [self.webView loadRequest:[NSURLRequest requestWithURL:[InstaAPI sharedInstance].loginURL]];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue
+- (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    
     [self.webView loadRequest:[NSURLRequest requestWithURL:[InstaAPI sharedInstance].loginURL]];
 }
 
@@ -49,7 +45,7 @@
 {
     if ([[InstaAPI sharedInstance] checkAndUpdateToken:request.URL])
     {
-        [self performSegueWithIdentifier:@"toGridSegue" sender:self];
+        [self.navigator didLogin];
         return NO;
     }
     return YES;

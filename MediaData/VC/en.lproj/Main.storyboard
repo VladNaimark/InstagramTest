@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MXZ-UH-VS6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,17 +13,17 @@
         <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="BYZ-38-t0r" customClass="LoginVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXV-KG-rg4">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="lQh-Jt-Hm7"/>
@@ -41,7 +41,6 @@
                     <navigationItem key="navigationItem" title="Login" id="IJi-NG-QPy"/>
                     <connections>
                         <outlet property="webView" destination="xXV-KG-rg4" id="Wqr-UX-KZm"/>
-                        <segue destination="Jun-js-JcJ" kind="show" identifier="toGridSegue" id="eZE-8k-zxw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -51,17 +50,17 @@
         <!--Media Grid-->
         <scene sceneID="0Rj-a4-vc8">
             <objects>
-                <viewController id="Jun-js-JcJ" customClass="MediaGridVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MediaGridVC" id="Jun-js-JcJ" customClass="MediaGridVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eEr-QT-BT0"/>
                         <viewControllerLayoutGuide type="bottom" id="z2s-mC-cba"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dnM-Z3-Ifk">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Tdo-24-O5x">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WbC-JT-3su">
                                     <size key="itemSize" width="150" height="150"/>
@@ -110,29 +109,26 @@
                     <navigationItem key="navigationItem" title="Media Grid" id="Ips-Bg-zyi"/>
                     <connections>
                         <outlet property="collectionView" destination="Tdo-24-O5x" id="CIE-ay-h63"/>
-                        <segue destination="fPM-2z-abr" kind="unwind" identifier="toLoginSegue" unwindAction="prepareForUnwind:" id="6iE-gH-XZH"/>
-                        <segue destination="Nba-L8-vjy" kind="show" identifier="toMedia" id="eh8-SV-tGo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w17-S8-nly" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="fPM-2z-abr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1762.4000000000001" y="38.23088455772114"/>
         </scene>
         <!--MediaVC-->
         <scene sceneID="uLB-ae-hxn">
             <objects>
-                <viewController id="Nba-L8-vjy" customClass="MediaVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MediaVC" id="Nba-L8-vjy" customClass="MediaVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2c9-3W-bkD"/>
                         <viewControllerLayoutGuide type="bottom" id="Ppg-nm-dgb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="PbD-qp-g4u">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EU4-aB-Fy6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="buP-1t-56l">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
@@ -216,25 +212,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Mk-vy-YR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2562.4000000000001" y="38.23088455772114"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="cfP-IM-HZH">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MXZ-UH-VS6" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="8KO-az-9CH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oQI-QB-duX"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dQZ-2g-fkV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="108" y="36"/>
         </scene>
     </scenes>
 </document>

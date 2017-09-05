@@ -12,6 +12,7 @@
 #import "MediaVC.h"
 #import "MediaList.h"
 #import "Media.h"
+#import "Navigator.h"
 
 static const int MEDIA_PER_REQUEST = 7;
 static const int DEFAULT_CELL_SIZE = 150;
@@ -62,15 +63,7 @@ static const int MIN_CELLS_PER_ROW = 3;
 - (void)logout:(id)sender
 {
     [[InstaAPI sharedInstance] logout];
-    [self performSegueWithIdentifier:@"toLoginSegue" sender:nil];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"toMedia"])
-    {
-        ((MediaVC*)segue.destinationViewController).media = self.mediaList.media[self.collectionView.indexPathsForSelectedItems.firstObject.item];
-    }
+    [self.navigator didLogout];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -90,7 +83,7 @@ static const int MIN_CELLS_PER_ROW = 3;
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"toMedia" sender:self];
+    [self.navigator showDetails:self.mediaList.media[indexPath.item]];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath

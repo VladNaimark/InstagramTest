@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NavigatableVC.h"
 
-@interface MediaGridVC : UIViewController
+@interface MediaGridVC : NavigatableVC
 
 @end

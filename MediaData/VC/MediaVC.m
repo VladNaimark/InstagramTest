@@ -29,6 +29,17 @@
     // Do any additional setup after loading the view.
     
     [self configure];
+    
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:LOCALIZE(@"Back", @"General")
+                                                                      style:UIBarButtonItemStylePlain
+                                                                     target:self
+                                                                     action:@selector(back:)];
+    self.navigationItem.leftBarButtonItem=newBackButton;
+}
+
+- (void)back:(id)sender
+{
+    [self.navigator hideDetails];
 }
 
 - (void)setMedia:(Media *)media
