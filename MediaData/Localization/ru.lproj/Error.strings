@@ -1,0 +1,9 @@
+/* 
+  Error.strings
+  MediaData
+
+  Created by Vlad Naimark on 9/5/17.
+  Copyright © 2017 Vlad Naimark. All rights reserved.
+*/
+
+"Network request is not available" = "Сетевой запрос недоступен";

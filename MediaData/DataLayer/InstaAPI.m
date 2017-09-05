@@ -11,6 +11,14 @@
 #import "MediaList.h"
 #import "Constants.h"
 
+static NSString *const CLIENT_SECRET = @"7a316fbc1ac14f139ab4045442fcfd62";
+static NSString *const CLIENT_ID = @"515632bc76bb4f8ea4702243d86a1422";
+static NSString *const REDIRECT_URI = @"https://mediadata.com/auth/instagram/callback";
+
+static NSString *const LOGIN_URL = @"https://api.instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=token";
+static NSString *const RECENT_MEDIA_ENDPOINT = @"/users/self/media/recent/";
+static NSString *const API_BASE = @"api.instagram.com/v1/";
+
 
 @interface InstaAPI () <NSURLSessionDelegate, NSURLSessionDataDelegate>
 
@@ -37,7 +45,7 @@
     self = [super init];
     if (self)
     {
-        self.loginURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=token", CLIENT_ID, REDIRECT_URI]];
+        self.loginURL = [NSURL URLWithString:[NSString stringWithFormat:LOGIN_URL, CLIENT_ID, REDIRECT_URI]];
         self.accessToken = @"";
         self.sessionManager = [AFHTTPSessionManager new];
         self.sessionManager.responseSerializer = [AFJSONResponseSerializer new];
@@ -61,11 +69,17 @@
 
 - (void)logout
 {
+    static NSArray *instagramCookieDomains;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instagramCookieDomains = @[@"www.instagram.com", @"api.instagram.com"];
+    });
+    
     NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
     NSMutableArray *cookiesToClean = [NSMutableArray new];
     for (NSHTTPCookie *cookie in cookieStorage.cookies)
     {
-        if ([cookie.domain isEqualToString:@"www.instagram.com"] || [cookie.domain isEqualToString:@"api.instagram.com"])
+        if ([instagramCookieDomains containsObject:cookie.domain])
         {
             [cookiesToClean addObject:cookie];
         }
@@ -84,7 +98,7 @@
     {
         params[@"count"] = @(count);
     }
-    [self sendRequestToEndPoint:mediaList ? mediaList.nextPageUrl : @"/users/self/media/recent/"
+    [self sendRequestToEndPoint:mediaList ? mediaList.nextPageUrl : RECENT_MEDIA_ENDPOINT
                  withParameters:params
                      completion:^(NSHTTPURLResponse *response, NSDictionary *data, NSError *error)
      {
@@ -124,7 +138,7 @@
     }
     else
     {
-        url = [@"https://" stringByAppendingString:[@"api.instagram.com/v1/" stringByAppendingPathComponent:endPoint]];
+        url = [@"https://" stringByAppendingString:[API_BASE stringByAppendingPathComponent:endPoint]];
     }
     NSURLSessionDataTask *task = [self.sessionManager GET:url
                                                parameters:params
@@ -147,7 +161,9 @@
     {
         if (completion)
         {
-            completion(nil, nil, [NSError errorWithDomain:@"com.mediadata" code:-1001 userInfo:@{NSLocalizedDescriptionKey : @"Network request is not available"}]);
+            completion(nil, nil, [NSError errorWithDomain:ERROR_DOMAIN
+                                                     code:-1001
+                                                 userInfo:@{NSLocalizedDescriptionKey : LOCALIZE(@"Network request is not available", @"Error")}]);
         }
     }
 }

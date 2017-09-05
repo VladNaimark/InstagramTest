@@ -8,6 +8,4 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString *const CLIENT_SECRET;
-extern NSString *const CLIENT_ID;
-extern NSString *const REDIRECT_URI;
+extern NSString *const ERROR_DOMAIN;
